@@ -4,14 +4,49 @@ import minus from "../assets/minus.png";
 
 const SearchImage = ({ imageObj, saveImage, savedImages }) => {
   console.log(savedImages, "savedimages");
+
+  const handleAdd = () => {
+    saveImage([...savedImages, imageObj]);
+  };
+
+  const handleDelete = () => {
+    const newImages = savedImages.filter((image) => image.id !== imageObj.id);
+    saveImage(newImages);
+  };
+
+  const verifyIfImageIsSaved = () => {
+    const matches = savedImages.find((image) => {
+      return image.id === imageObj.id;
+    });
+
+    console.log("matches?", matches);
+    if (matches) {
+      return (
+        <img
+          className="add-or-remove"
+          src={minus}
+          role="button"
+          onClick={handleDelete}
+        />
+      );
+    } else {
+      return (
+        <img
+          className="add-or-remove"
+          src={plus}
+          role="button"
+          onClick={handleAdd}
+        />
+      );
+    }
+  };
+
+  console.log("check func", verifyIfImageIsSaved());
+
   return (
     <div className="image-container">
-      <img
-        className="add-or-remove"
-        src={plus}
-        role="button"
-        onClick={() => saveImage([...savedImages, imageObj])}
-      />
+      {verifyIfImageIsSaved()}
+
       <img
         className={"giphy"}
         key={imageObj.id}
