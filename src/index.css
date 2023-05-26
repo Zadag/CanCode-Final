@@ -46,6 +46,38 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#search-results {
+  display: block;
+}
+
+.giphy {
+  height: 300px;
+  width: 300px;
+}
+
+.add-or-remove {
+  display: absolute;
+  position: relative;
+  top: 40px;
+  left: 260px;
+  height: 40px;
+  width: 40px;
+  border: solid;
+  border-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-or-remove:hover {
+  transform: scale(1.1);
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
