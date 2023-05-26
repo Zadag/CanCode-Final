@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Search from "./components/Search";
-import SearchResults from "./components/SearchResults";
 import SearchPage from "./components/SearchPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [savedImages, setSavedImages] = useState([]);
@@ -11,6 +10,8 @@ function App() {
   console.log(savedImages);
   return (
     <>
+      <h1>Gif Collection</h1>
+      <NavBar />
       <SearchPage
         savedImages={savedImages}
         saveImage={setSavedImages}

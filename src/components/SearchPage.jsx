@@ -10,7 +10,6 @@ const SearchPage = ({
 }) => {
   return (
     <>
-      <h1>Gif Collection</h1>
       <Search setSearchImages={setSearchImages}></Search>
       <SearchResults
         imageObjs={searchImages}

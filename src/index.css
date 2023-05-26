@@ -73,6 +73,10 @@ button:focus-visible {
   transform: scale(1.1);
 }
 
+#search-bar {
+  margin-top: 20px;
+}
+
 .image-container {
   display: flex;
   flex-direction: column;

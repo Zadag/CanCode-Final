@@ -23,6 +23,7 @@ const Search = ({ setSearchImages }) => {
     <>
       <form onSubmit={(e) => handleSearch(e, searchInput)}>
         <input
+          id="search-bar"
           placeholder="Search for a gif"
           onChange={handleChange}
           value={searchInput}
