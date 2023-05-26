@@ -56,7 +56,7 @@ button:focus-visible {
 }
 
 .add-or-remove {
-  display: absolute;
+  display: inline-block;
   position: relative;
   top: 40px;
   left: 260px;
@@ -80,6 +80,20 @@ button:focus-visible {
 .image-container {
   display: flex;
   flex-direction: column;
+}
+
+#collection-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 @media (prefers-color-scheme: light) {

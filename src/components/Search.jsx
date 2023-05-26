@@ -12,7 +12,6 @@ const Search = ({ setSearchImages }) => {
     );
     const data = await res.json();
     setSearchImages(data.data);
-    console.log("search images");
   };
 
   const handleChange = (e) => {

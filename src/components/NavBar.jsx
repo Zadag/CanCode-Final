@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const NavBar = () => {
-  const [clicked, setClicked] = useState("Search");
-
+const NavBar = ({ setClicked }) => {
   const handleClick = (e) => {
     setClicked(e.target.id);
   };
