@@ -6,13 +6,17 @@ import SearchResults from "./components/SearchResults";
 function App() {
   const [savedImages, setSavedImages] = useState([]);
   const [searchImages, setSearchImages] = useState([]);
-  console.log(searchImages);
 
+  console.log(savedImages);
   return (
     <>
       <h1>Gif Collection</h1>
       <Search setSearchImages={setSearchImages}></Search>
-      <SearchResults imageObjs={searchImages} />
+      <SearchResults
+        imageObjs={searchImages}
+        saveImage={setSavedImages}
+        savedImages={savedImages}
+      />
     </>
   );
 }
