@@ -3,8 +3,7 @@ import plus from "../assets/plus.png";
 import minus from "../assets/minus.png";
 
 const SearchImage = ({ imageObj, saveImage, savedImages }) => {
-  console.log(savedImages, "savedimages");
-
+  console.log("loading searchimage");
   const handleAdd = () => {
     saveImage([...savedImages, imageObj]);
   };
@@ -19,7 +18,6 @@ const SearchImage = ({ imageObj, saveImage, savedImages }) => {
       return image.id === imageObj.id;
     });
 
-    console.log("matches?", matches);
     if (matches) {
       return (
         <img

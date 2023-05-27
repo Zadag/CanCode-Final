@@ -3,6 +3,7 @@ import "./App.css";
 import SearchPage from "./components/SearchPage";
 import NavBar from "./components/NavBar";
 import CollectionPage from "./components/CollectionPage";
+import TrendingPage from "./components/TrendingPage";
 
 function App() {
   const [savedImages, setSavedImages] = useState([]);
@@ -21,8 +22,12 @@ function App() {
           searchImages={searchImages}
           setSearchImages={setSearchImages}
         />
-      ) : (
+      ) : clicked === "collection-btn" ? (
         <CollectionPage saveImage={setSavedImages} savedImages={savedImages} />
+      ) : clicked === "trending-btn" ? (
+        <TrendingPage saveImage={setSavedImages} savedImages={savedImages} />
+      ) : (
+        <p>loading</p>
       )}
     </>
   );
