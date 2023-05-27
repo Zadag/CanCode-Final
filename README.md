@@ -1,5 +1,8 @@
 # CanCode-Final Gif collection app
 
+![App image placeholder](https://github.com/Zadag/CanCode-Final/blob/main/app_preview.png?raw=true)
+
+
 ## Requirements
 
 In order to run this program you will need Node.js
