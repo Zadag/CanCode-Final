@@ -1,6 +1,6 @@
 # CanCode-Final Gif collection app
 
-![App image placeholder](https://github.com/Zadag/CanCode-Final/blob/main/assets/app_preview.png?raw=true)
+![App image placeholder](src/assets/app_preview.png)
 
 
 ## Requirements
