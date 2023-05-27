@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import SearchImage from "./SearchImage";
 import { useState } from "react";
+import gyfKey from "../apikey";
 
 const TrendingPage = ({ savedImages, saveImage }) => {
   const [trendingImages, setTrendingImages] = useState([]);
@@ -8,7 +9,7 @@ const TrendingPage = ({ savedImages, saveImage }) => {
   useEffect(() => {
     const dataFetch = async () => {
       const res = await fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=t2D5o8XJv6OetjD1hhxtktx6ove10WdA&limit=25&rating=g"
+        `https://api.giphy.com/v1/gifs/trending?api_key=${gyfKey}&limit=25&rating=g`
       );
       const data = await res.json();
       setTrendingImages(data.data);

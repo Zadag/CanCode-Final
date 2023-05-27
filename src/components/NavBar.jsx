@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 
 const NavBar = ({ setClicked }) => {
   const handleClick = (e) => {
