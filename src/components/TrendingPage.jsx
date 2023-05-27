@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import SearchImage from "./SearchImage";
 import { useState } from "react";
@@ -14,7 +15,6 @@ const TrendingPage = ({ savedImages, saveImage }) => {
       );
       const data = await res.json();
       setTrendingImages(data.data);
-      console.log(data.data);
     };
     try {
       dataFetch();

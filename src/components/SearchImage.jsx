@@ -3,7 +3,6 @@ import plus from "../assets/plus.png";
 import minus from "../assets/minus.png";
 
 const SearchImage = ({ imageObj, saveImage, savedImages }) => {
-  console.log("loading searchimage");
   const handleAdd = () => {
     saveImage([...savedImages, imageObj]);
   };
@@ -38,8 +37,6 @@ const SearchImage = ({ imageObj, saveImage, savedImages }) => {
       );
     }
   };
-
-  console.log("check func", verifyIfImageIsSaved());
 
   return (
     <div className="image-container">
