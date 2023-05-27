@@ -5,6 +5,7 @@ import gyfKey from "../apikey";
 
 const TrendingPage = ({ savedImages, saveImage }) => {
   const [trendingImages, setTrendingImages] = useState([]);
+  const [hasError, setHasError] = useState([false]);
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -15,19 +16,28 @@ const TrendingPage = ({ savedImages, saveImage }) => {
       setTrendingImages(data.data);
       console.log(data.data);
     };
-    dataFetch();
+    try {
+      dataFetch();
+    } catch (error) {
+      console.error(error);
+      setHasError(true);
+    }
   }, []);
 
-  return trendingImages.map((image) => {
-    return (
-      <SearchImage
-        key={image.id}
-        imageObj={image}
-        saveImage={saveImage}
-        savedImages={savedImages}
-      />
-    );
-  });
+  return hasError ? (
+    trendingImages.map((image) => {
+      return (
+        <SearchImage
+          key={image.id}
+          imageObj={image}
+          saveImage={saveImage}
+          savedImages={savedImages}
+        />
+      );
+    })
+  ) : (
+    <p>Something went wrong</p>
+  );
 };
 
 export default TrendingPage;

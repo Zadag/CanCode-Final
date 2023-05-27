@@ -4,14 +4,20 @@ import gyfKey from "../apikey";
 
 const Search = ({ setSearchImages }) => {
   const [searchInput, setSearchInput] = useState("");
+  const [hasError, setHasError] = useState(false);
 
   const handleSearch = async (e, searchInput) => {
     e.preventDefault();
-    const res = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${gyfKey}&q=${searchInput}&limit=25&offset=0&rating=g&lang=en`
-    );
-    const data = await res.json();
-    setSearchImages(data.data);
+    try {
+      const res = await fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=${gyfKey}&q=${searchInput}&limit=25&offset=0&rating=g&lang=en`
+      );
+      const data = await res.json();
+      setSearchImages(data.data);
+    } catch (error) {
+      console.error(error);
+      setHasError(true);
+    }
   };
 
   const handleChange = (e) => {
@@ -20,6 +26,7 @@ const Search = ({ setSearchImages }) => {
 
   return (
     <>
+      {hasError ? <p>Something went wrong</p> : <></>}
       <form onSubmit={(e) => handleSearch(e, searchInput)}>
         <input
           id="search-bar"

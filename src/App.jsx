@@ -8,7 +8,7 @@ import TrendingPage from "./components/TrendingPage";
 function App() {
   const [savedImages, setSavedImages] = useState([]);
   const [searchImages, setSearchImages] = useState([]);
-  const [clicked, setClicked] = useState("Search");
+  const [clicked, setClicked] = useState("search-btn");
 
   console.log(savedImages);
   return (
